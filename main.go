@@ -3,8 +3,8 @@ package main
 import (
 	"github.com/dreamilk/rpc_server/server"
 
-	pb "login/api"
-	"login/handler"
+	pb "hello_rpc/api"
+	"hello_rpc/handler"
 )
 
 func main() {

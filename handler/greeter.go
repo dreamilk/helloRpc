@@ -3,7 +3,7 @@ package handler
 import (
 	"context"
 
-	pb "login/api"
+	pb "hello_rpc/api"
 )
 
 type GreeterHandler struct {

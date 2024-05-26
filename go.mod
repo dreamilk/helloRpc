@@ -1,4 +1,4 @@
-module login
+module hello_rpc
 
 go 1.20
 
