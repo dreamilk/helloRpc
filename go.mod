@@ -3,7 +3,7 @@ module hello_rpc
 go 1.20
 
 require (
-	github.com/dreamilk/rpc_server v0.0.0-20240526154717-4d357333e1ad
+	github.com/dreamilk/rpc_server v0.0.0-20240527124849-a4b3cce3922d
 	google.golang.org/grpc v1.64.0
 	google.golang.org/protobuf v1.34.1
 )
