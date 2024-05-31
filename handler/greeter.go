@@ -8,10 +8,15 @@ import (
 
 type GreeterHandler struct {
 	pb.UnimplementedHelloServer
+	pb.UnimplementedTestServer
 }
 
 func (GreeterHandler) SayHello(ctx context.Context, req *pb.HelloRequest) (*pb.HelloReply, error) {
 	return &pb.HelloReply{
 		Message: "Hello " + req.GetName(),
 	}, nil
+}
+
+func (GreeterHandler) Ping(ctx context.Context, req *pb.PingReq) (*pb.PingResp, error) {
+	return &pb.PingResp{}, nil
 }

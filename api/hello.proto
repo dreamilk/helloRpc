@@ -8,6 +8,18 @@ service hello {
     // Sends a greeting
     rpc SayHello (HelloRequest) returns (HelloReply) {}
 }
+
+service Test{
+    rpc Ping(PingReq) returns (PingResp){}
+}
+
+message PingReq{
+
+}
+
+message PingResp{
+
+}
   
 // The request message containing the user's name.
 message HelloRequest {

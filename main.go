@@ -9,6 +9,7 @@ import (
 
 func main() {
 	server.RegisterService(&pb.Hello_ServiceDesc, &handler.GreeterHandler{})
+	server.RegisterService(&pb.Test_ServiceDesc, &handler.GreeterHandler{})
 
 	if err := server.Serve(); err != nil {
 		return
