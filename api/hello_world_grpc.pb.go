@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.12.4
-// source: api/hello.proto
+// source: api/hello_world.proto
 
-package hello
+package api
 
 import (
 	context "context"
@@ -36,7 +36,7 @@ func NewHelloClient(cc grpc.ClientConnInterface) HelloClient {
 
 func (c *helloClient) SayHello(ctx context.Context, in *HelloRequest, opts ...grpc.CallOption) (*HelloReply, error) {
 	out := new(HelloReply)
-	err := c.cc.Invoke(ctx, "/project.hello/SayHello", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.Hello/SayHello", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -82,7 +82,7 @@ func _Hello_SayHello_Handler(srv interface{}, ctx context.Context, dec func(inte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/project.hello/SayHello",
+		FullMethod: "/api.Hello/SayHello",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(HelloServer).SayHello(ctx, req.(*HelloRequest))
@@ -94,7 +94,7 @@ func _Hello_SayHello_Handler(srv interface{}, ctx context.Context, dec func(inte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Hello_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "project.hello",
+	ServiceName: "api.Hello",
 	HandlerType: (*HelloServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -103,7 +103,7 @@ var Hello_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "api/hello.proto",
+	Metadata: "api/hello_world.proto",
 }
 
 // TestClient is the client API for Test service.
@@ -123,7 +123,7 @@ func NewTestClient(cc grpc.ClientConnInterface) TestClient {
 
 func (c *testClient) Ping(ctx context.Context, in *PingReq, opts ...grpc.CallOption) (*PingResp, error) {
 	out := new(PingResp)
-	err := c.cc.Invoke(ctx, "/project.Test/Ping", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.Test/Ping", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -168,7 +168,7 @@ func _Test_Ping_Handler(srv interface{}, ctx context.Context, dec func(interface
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/project.Test/Ping",
+		FullMethod: "/api.Test/Ping",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(TestServer).Ping(ctx, req.(*PingReq))
@@ -180,7 +180,7 @@ func _Test_Ping_Handler(srv interface{}, ctx context.Context, dec func(interface
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Test_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "project.Test",
+	ServiceName: "api.Test",
 	HandlerType: (*TestServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -189,5 +189,5 @@ var Test_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "api/hello.proto",
+	Metadata: "api/hello_world.proto",
 }

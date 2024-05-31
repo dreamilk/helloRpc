@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package project;
-option go_package = "login/api/hello";
+package api;
+option go_package = "login/api";
 
 // The greeting service definition.
-service hello {
+service Hello {
     // Sends a greeting
     rpc SayHello (HelloRequest) returns (HelloReply) {}
 }
@@ -14,7 +14,6 @@ service Test{
 }
 
 message PingReq{
-
 }
 
 message PingResp{
