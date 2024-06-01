@@ -18,5 +18,7 @@ func (GreeterHandler) SayHello(ctx context.Context, req *pb.HelloRequest) (*pb.H
 }
 
 func (GreeterHandler) Ping(ctx context.Context, req *pb.PingReq) (*pb.PingResp, error) {
-	return &pb.PingResp{}, nil
+	return &pb.PingResp{
+		Resp: "pong",
+	}, nil
 }

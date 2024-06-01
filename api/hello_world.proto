@@ -17,7 +17,7 @@ message PingReq{
 }
 
 message PingResp{
-
+    string resp = 1;
 }
   
 // The request message containing the user's name.
