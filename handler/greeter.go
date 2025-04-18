@@ -13,7 +13,7 @@ type GreeterHandler struct {
 
 func (GreeterHandler) SayHello(ctx context.Context, req *pb.HelloRequest) (*pb.HelloReply, error) {
 	return &pb.HelloReply{
-		Message: "Hello " + req.GetName(),
+		Message: "Hello rpc abc " + req.GetName(),
 	}, nil
 }
 

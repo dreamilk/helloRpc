@@ -3,7 +3,8 @@ module hello_rpc
 go 1.20
 
 require (
-	github.com/dreamilk/rpc_server v1.0.2
+	github.com/dreamilk/rpc_server v1.0.5
+	github.com/golang/protobuf v1.5.4
 	google.golang.org/grpc v1.64.0
 	google.golang.org/protobuf v1.34.1
 )
@@ -33,3 +34,5 @@ require (
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20240521202816-d264139d666e // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
+
+// replace github.com/dreamilk/rpc_server => ../rpc_server

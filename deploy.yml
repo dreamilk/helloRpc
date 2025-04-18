@@ -1,8 +1,7 @@
-app_name: "hello_world"
+app_name: "hello_rpc"
 id: "id123"
 
-port: 8301
+port: 8999
 addr: "127.0.0.1"
 
-consul:
-  addr: "local_consul.orb.local:8301"
+consul: "127.0.0.1:9301"
